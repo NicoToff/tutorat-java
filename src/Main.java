@@ -1,17 +1,18 @@
 public class Main {
     public static void main(String[] args) {
 
-        Personnage perso = new Personnage(10);
-        Personnage perso2 = new Personnage(12);
-        Personnage perso3 = new Personnage(15);
+        Personnage[] persos = new Personnage[3];
+        Joueur joueur1 = new Joueur(13, "Joe");
+        System.out.println(joueur1);
 
-        System.out.println("Nombre de persos: " + Personnage.getNbrPerso());
+        for (int i = 0; i < persos.length; i++) {
+            persos[i] = new Personnage(12);
+        }
 
-        System.out.println(perso + " " + perso.getLife() + "/" + perso.getMaxLife());
-        System.out.println(perso2 + " " + perso2.getLife() + "/" + perso2.getMaxLife());
-        System.out.println(perso2 + " " + perso3.getLife() + "/" + perso3.getMaxLife());
+        for (Personnage p : persos) {
+            System.out.println(p);
+        }
 
-        perso.dealDamage(645654);
-        System.out.println(perso + " " + perso.getLife() + "/" + perso.getMaxLife());
+        System.out.println("Nombre de persos: " + Joueur.getNbrPerso());
     }
 }
